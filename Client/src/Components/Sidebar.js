@@ -1,6 +1,7 @@
 // import logo from './logo.svg';
 import '../Styles/global.css';
 import React from 'react';
+// import { Link } from 'react-router-dom';
 
 export default function Sidebar() {
   const menus = [
@@ -9,29 +10,30 @@ export default function Sidebar() {
     { to: '/burrow/random', text: "Random"}
   ]
   const burrows =[
-    "music",
-    "gaming",
-    "anime",
-    "existentialcrisis"
+    "Music",
+    "Gaming",
+    "Anime",
+    "ExistentialCrisis"
   ]
   
   return (
-    <div className="sidebar">
-      <div className='sidebar-link'>
-        <ul className='sidebar-menu'>
-            { menus.map(menu => (
-                  <li><a href={menu.to}>{menu.text}</a></li>
-            ))}
-        </ul>
-        <hr />
-        <ul className='sidebar-burrows'>
-            { burrows.map(burrow => (
-                  <li><a href={`/burrow/${burrow}`}>{burrow}</a></li>
-            ))}
-        </ul>
+      <div className="sidebar">
+        <div className='sidebar-menu'>
+          <ul className='sidebar-link'>
+              { menus.map(menu => (
+                    <li><a href={menu.to}>{menu.text}</a></li>
+              ))}
+          </ul>
+          <hr />
+          <ul className='sidebar-burrows'>
+              { burrows.map(burrow => (
+                    <li><a href={`/burrow/${burrow}`}>{burrow}</a></li>
+              ))}
+          </ul>
 
-      </div>
-    </div>
+        </div>
+      </div>   
+
   );
 }
 
