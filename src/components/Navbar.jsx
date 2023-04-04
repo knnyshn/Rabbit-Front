@@ -1,134 +1,116 @@
-import react, { useEffect, useState } from "react";
+// import { useEffect } from 'react';
+// import { useSelector, useDispatch } from 'react-redux';
+// import { Link, useLocation } from 'react-router-dom';
+// import {
+//   Flex,
+//   Heading,
+//   Spacer,
+//   HStack,
+//   Button,
+//   Menu,
+//   MenuButton,
+//   MenuList,
+//   MenuItem,
+//   MenuDivider,
+//   Alert,
+//   AlertIcon,
+//   CircularProgress,
+// } from '@chakra-ui/react';
+// import { ChevronDownIcon } from '@chakra-ui/icons';
+// import { ColorModeSwitcher } from '../ColorModeSwitcher';
+// import ThemedBox from './ThemedBox';
 
-const Navbar = () => {
-  const navigate = useNavigate();
-  const user = isLoggedIn();
-  const theme = useTheme();
-  const username = user && isLoggedIn().username;
-  const [search, setSearch] = useState("");
-  const [searchIcon, setSearchIcon] = useState(false);
-  const [width, setWindowWidth] = useState(0);
+// import {
+//   userSelector,
+//   subredditsSelector,
+//   createLoadingAndErrorSelector,
+// } from '../selectors';
 
-  useEffect(() => {
-    updateDimensions();
+// import { startLogout } from '../actions/auth';
+// import { getSubreddits } from '../actions/subreddits';
+// import LoginAndRegisterButtons from './LoginAndRegisterButtons';
 
-    window.addEventListener("resize", updateDimensions);
-    return () => window.removeEventListener("resize", updateDimensions);
-  }, []);
+// const Navbar = () => {
+//   const location = useLocation();
+//   const subredditName = location.pathname.match(/r\/[^\/]+/);
+//   const user = useSelector(userSelector);
+//   const subreddits = useSelector(subredditsSelector);
+//   const dispatch = useDispatch();
 
-  const mobile = width < 500;
-  const navbarWidth = width < 600;
+//   useEffect(() => {
+//     dispatch(getSubreddits());
+//   }, []);
 
-  const updateDimensions = () => {
-    const width = window.innerWidth;
-    setWindowWidth(width);
-  };
+//   return (
+//     <ThemedBox
+//       py={2}
+//       px={[0, 0, 10, 10]}
+//       display="flex"
+//       justifyContent="flex-start"
+//       alignItems="center"
+//       mb={7}
+//     >
+//       <Heading
+//         ml={[2, 4]}
+//         display={user ? 'block' : ['none', 'block']}
+//         fontSize={['1.3rem', '2.25rem']}
+//       >
+//         weddit
+//       </Heading>
+//       <HStack>
+//         <Menu>
+//           <MenuButton mx={2} as={Button} rightIcon={<ChevronDownIcon />}>
+//             {subredditName || 'Home'}
+//           </MenuButton>
+//           <MenuList>
+//             <MenuItem as={Link} to="/">
+//               Home
+//             </MenuItem>
+//             <MenuDivider />
+//             {subreddits.map(({ name }) => (
+//               <MenuItem
+//                 key={name}
+//                 as={Link}
+//                 to={`/r/${name}`}
+//               >{`r/${name}`}</MenuItem>
+//             ))}s
+//           </MenuList>
+//         </Menu>
+//         {user && (
+//           <Button display={['none', 'flex']} as={Link} to="/submit">
+//             Submit
+//           </Button>
+//         )}
+//       </HStack>
+//       <Spacer />
 
-  const handleLogout = async (e) => {
-    logoutUser();
-    navigate("/login");
-  };
+//       {user ? (
+//         <Menu>
+//           <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
+//             {user.username}
+//           </MenuButton>
+//           <MenuList>
+//             <MenuItem display={['block', 'none']} as={Link} to="/submit">
+//               Submit post
+//             </MenuItem>
+//             <MenuItem as={Link} to="/subreddits/create">
+//               Create subreddit
+//             </MenuItem>
+//             <MenuItem
+//               onClick={async () => {
+//                 await dispatch(startLogout());
+//               }}
+//             >
+//               Logout
+//             </MenuItem>
+//           </MenuList>
+//         </Menu>
+//       ) : (
+//         <LoginAndRegisterButtons />
+//       )}
+//       <ColorModeSwitcher />
+//     </ThemedBox>
+//   );
+// };
 
-  const handleChange = (e) => {
-    setSearch(e.target.value);
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    navigate("/search?" + new URLSearchParams({ search }));
-  };
-
-  const handleSearchIcon = (e) => {
-    setSearchIcon(!searchIcon);
-  };
-
-  return (
-    <Stack mb={2}>
-      <Stack
-        direction="row"
-        alignItems="center"
-        justifyContent="space-between"
-        sx={{
-          pt: 2,
-          pb: 0,
-        }}
-        spacing={!mobile ? 2 : 0}
-      >
-        <HorizontalStack>
-          <AiFillFileText
-            size={33}
-            color={theme.palette.primary.main}
-            onClick={() => navigate("/")}
-          />
-          <Typography
-            sx={{ display: mobile ? "none" : "block" }}
-            variant={navbarWidth ? "h6" : "h4"}
-            mr={1}
-            color={theme.palette.primary.main}
-          >
-            {/* <Link to="/" color="inherit"> */}
-            PostIt
-            {/* </Link> */}
-          </Typography>
-        </HorizontalStack>
-
-        {!navbarWidth && (
-          <Box component="form" onSubmit={handleSubmit}>
-            <TextField
-              size="small"
-              label="Search for posts..."
-              sx={{ flexGrow: 1, maxWidth: 300 }}
-              onChange={handleChange}
-              value={search}
-            />
-          </Box>
-        )}
-
-        <HorizontalStack>
-          {mobile && (
-            <IconButton onClick={handleSearchIcon}>
-              <AiOutlineSearch />
-            </IconButton>
-          )}
-
-          <IconButton component={Link} to={"/"}>
-            <AiFillHome />
-          </IconButton>
-          {user ? (
-            <>
-              <IconButton component={Link} to={"/messenger"}>
-                <AiFillMessage />
-              </IconButton>
-              <IconButton component={Link} to={"/users/" + username}>
-                <UserAvatar width={30} height={30} username={user.username} />
-              </IconButton>
-              <Button onClick={handleLogout}>Logout</Button>
-            </>
-          ) : (
-            <>
-              <Button variant="text" sx={{ minWidth: 80 }} href="/signup">
-                Sign Up
-              </Button>
-              <Button variant="text" sx={{ minWidth: 65 }} href="/login">
-                Login
-              </Button>
-            </>
-          )}
-        </HorizontalStack>
-      </Stack>
-      {navbarWidth && searchIcon && (
-        <Box component="form" onSubmit={handleSubmit} mt={2}>
-          <TextField
-            size="small"
-            label="Search for posts..."
-            fullWidth
-            onChange={handleChange}
-            value={search}
-          />
-        </Box>
-      )}
-    </Stack>
-  );
-};
-
-export default Navbar;
+// export default Navbar;
