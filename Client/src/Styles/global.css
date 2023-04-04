@@ -3,15 +3,17 @@
 @tailwind utilities;
 
 @layer components {
-  .container {
-    @apply px-4 mx-auto bg-blue-400 max-w-7xl sm:px-6 lg:px-8;
-  }
-
   .sidebar {
-    @apply flex justify-end;
+    @apply flex flex-row justify-end mr-16;
   }
 
-  .lol {
-    @apply mx-auto border-green-900 border-2 rounded-xl;
+  .sidebar-menu {
+    @apply border-2 border-gray-300 p-8 shadow-sm shadow-gray-300 rounded
   }
 }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }

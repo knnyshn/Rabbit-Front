@@ -1,12 +1,15 @@
-// import logo from './logo.svg';
-import "./Styles/global.css";
+import { Routes, Route } from 'react-router-dom'
+import Home from './Components/Home';
 
 function App() {
   return (
-    <div className="App">
-      DAFUQ
-    </div>
-  );
+    <>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        
+      </Routes>
+    </>
+  )
 }
 
 export default App;
