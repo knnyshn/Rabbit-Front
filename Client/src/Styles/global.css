@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .container {
+    @apply px-4 mx-auto bg-blue-400 max-w-7xl sm:px-6 lg:px-8;
+  }
+
+  .sidebar {
+    @apply flex justify-end;
+  }
+
+  .lol {
+    @apply mx-auto border-green-900 border-2 rounded-xl;
+  }
+}
