@@ -4,11 +4,11 @@
 
 @layer components {
   .sidebar {
-    @apply flex flex-row justify-end mr-16;
+    @apply flex flex-row justify-end mr-16 py-4;
   }
 
   .sidebar-menu {
-    @apply border-2 border-gray-300 p-8 h-[300px] shadow-sm shadow-gray-300 rounded
+    @apply border-2 border-gray-300 p-8 pt-4 h-[300px] shadow-sm shadow-gray-300 rounded
   }
 
   .header {
@@ -20,7 +20,11 @@
   }
 
   .posts-container {
-    @apply flex flex-col justify-between w-full;
+    @apply flex flex-col justify-between w-full gap-4 px-4 py-4
+  }
+
+  .post {
+    @apply border-2 border-gray-300 rounded
   }
 
   .post-buttons {
@@ -29,6 +33,14 @@
 
   .beeg-container {
     @apply flex
+  }
+
+  .post-buttons {
+    @apply text-slate-400
+  }
+
+  .title {
+    @apply text-blue-500
   }
 }
 

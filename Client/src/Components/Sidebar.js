@@ -15,7 +15,9 @@ export default function Sidebar() {
     "Music",
     "Gaming",
     "Anime",
-    "ExistentialCrisis"
+    "ExistentialCrisis",
+    "ZoomersVSBoomers",
+    "RabbitJustice"
   ]
   
   return (

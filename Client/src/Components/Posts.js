@@ -28,6 +28,9 @@ function Posts() {
     <div className='posts-container'>
       {postsdummy.map(() => {
         return (
+          <div className=''>
+          {/* UP/DOWNVOTE */}
+          {/* THUMBNAIL */}
           <div className='post'>
             <p className='single-post'/>
 
@@ -45,16 +48,11 @@ function Posts() {
               <button className='save'>Save</button>
             </ul>
           </div>
+          </div>
         )
       })}
       </div>
       <Sidebar />
-      {/* {posts.map(post => (
-        <div key={post.id}>
-        <h2>{post.title}</h2>
-        <p>{post.content}</p>
-        </div>
-      ))} */}
     </div>
   );
 }
