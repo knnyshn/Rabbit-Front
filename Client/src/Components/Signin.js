@@ -49,7 +49,7 @@ export default function SignIn({ visibility, sendDataToParent }) {
             <h1>Log in or create an account</h1>
           </div>
           <div className='signin-modal-input-area'>
-            <h2>Welcome to dumpster.io</h2>
+            <h2>Welcome to Rabbit</h2>
             <form onSubmit={handleSubmit}>
               <input
                 type="text"

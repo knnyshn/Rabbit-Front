@@ -10,6 +10,14 @@
   .sidebar-menu {
     @apply border-2 border-gray-300 p-8 shadow-sm shadow-gray-300 rounded
   }
+
+  .header {
+    @apply bg-red-600;
+  }
+
+  .footer {
+    @apply bg-green-600 mb-auto;
+  }
 }
 
 * {
