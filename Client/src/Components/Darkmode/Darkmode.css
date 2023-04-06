@@ -1,0 +1,8 @@
+body {
+  background-color: var(--body);
+  color: var(--text);
+}
+
+p {
+  font-size: 1.2rem;
+}
