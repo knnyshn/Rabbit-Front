@@ -2,6 +2,8 @@ import '../Styles/global.css'
 import { useEffect, useRef, useState } from "react"
 import { signIn } from '../api/user'
 
+// This is the component for the sign in feature (or menu) for the header.
+
 export default function SignIn({ visibility, sendDataToParent }) {
     const [username, setUsername] = useState()
     const [password, setPassword] = useState()

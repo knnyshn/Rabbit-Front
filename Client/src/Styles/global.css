@@ -8,7 +8,7 @@
   }
 
   .sidebar-menu {
-    @apply border-2 border-gray-300 p-8 shadow-sm shadow-gray-300 rounded
+    @apply border-2 border-gray-300 p-8 h-[300px] shadow-sm shadow-gray-300 rounded
   }
 
   .header {
@@ -17,6 +17,18 @@
 
   .footer {
     @apply bg-green-600 mb-auto;
+  }
+
+  .posts-container {
+    @apply flex flex-col justify-between w-full;
+  }
+
+  .post-buttons {
+    @apply gap-3 flex
+  }
+
+  .beeg-container {
+    @apply flex
   }
 }
 

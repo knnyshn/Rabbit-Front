@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
+// This is the component to create a post after logging in etc.
 
 function CreatePost() {
   const [title, setTitle] = useState('');

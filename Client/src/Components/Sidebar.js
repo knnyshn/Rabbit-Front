@@ -3,6 +3,8 @@ import '../Styles/global.css';
 import React from 'react';
 // import { Link } from 'react-router-dom';
 
+// This will be the sidebar with subreddits. Usually they are on top in classic Reddit.
+
 export default function Sidebar() {
   const menus = [
     { to: '/burrow/popular', text:"Popular"},

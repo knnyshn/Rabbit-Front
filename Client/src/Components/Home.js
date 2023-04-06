@@ -3,6 +3,10 @@ import Posts from './Posts'
 import Footer from './Footer'
 import Header from './Header'
 
+// Every component will be piped through here to be the home page.
+// Each component will be in its own respective container.
+// There are extra containers if needed (if there are nested components).
+
 function Home() {
     return (
       <div className='PARENT-DIV'>
