@@ -1,11 +1,11 @@
 import React from 'react';
-import './NavBar.css';
+import './Navbar.css';
 
 function NavBar() {
   return (
     <div className="nav-container">
       <div className="logo">
-        <img src="Client/src/Assets/Images/Rabbit.jpeg" alt="logo" />
+        <img src="/Rabbit.jpeg" alt="logo" />
       </div>
       <ul className="nav-links">
         <li><a href="Home">Home</a></li>
