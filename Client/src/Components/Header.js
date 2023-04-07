@@ -6,7 +6,7 @@ export default function Header() {
     return (
         <div className='header'>
             <h1>
-            THIS IS A PLACEHOLDER FOR WILLS PLACEHOLDER
+            THIS IS A PLACEHOLDER FOR WILLS HEADER
             </h1>
         </div>
     )
