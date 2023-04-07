@@ -1,7 +1,8 @@
 // import React, { useState, useEffect } from 'react';
 // import axios from 'axios';
 import Sidebar from './Sidebar';
-
+// import Thumbnail from './Thumbnail';
+// import VoteButton from './VoteButton';
 
 // This is the component for the Posts on the front (or home) page of Reddit.
 
