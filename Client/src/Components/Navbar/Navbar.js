@@ -1,11 +1,14 @@
 import React from 'react';
 import './Navbar.css';
+import { Link } from 'react-router-dom';
 
 function NavBar() {
   return (
     <div className="nav-container">
       <div className="logo">
-        <img src="/Rabbit.jpeg" alt="logo" />
+      <Link to={`/`}>
+      <img src="/Rabbit.jpeg" alt="logo" />
+      </Link>
       </div>
       <div className="search-bar">
         <input type="text" placeholder="Search" />

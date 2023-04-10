@@ -20,27 +20,28 @@ function PostDetails() {
     fetchPost();
   }, [postId]);
     
+  console.log(post);
 
     return (
         <div>
             <Header />
             <div>
                 {post ? 
-                (
-                    <div className='post-container'>
-                    <div className='post-detail'>
-                        <h1 className='title-detail'>{post.title}</h1>
-                        <p className='body-detail'>
+                (   
+                    <div className='post-details-container'>
+                    <div className='post-details'>
+                        <h1 className='title-details'>{post.title}</h1>
+                        <p className='body-details'>
                             {post.content}
                         </p>
                         <p class='tagline'>
-                            submitted by {post.user} in {post.burrow}.
+                            submitted by {post.user.username} in {post.burrow.name}
                         </p>
                     </div>
                     <div className='comment-container'>
-                        <h2>
+                        <p className='comment-details'>
                             {post.comment}
-                        </h2>
+                        </p>
                     </div>
                     </div>
                 ) : (
