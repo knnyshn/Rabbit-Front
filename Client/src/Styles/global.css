@@ -23,6 +23,10 @@
     @apply flex flex-col justify-between w-full px-4 py-6 gap-2
   }
 
+  .post-details-container {
+    @apply border-2 border-gray-300 shadow-sm shadow-gray-300 rounded 
+  }
+
   .post {
     @apply border-2 border-gray-300 shadow-sm shadow-gray-300 rounded 
   }
@@ -42,6 +46,11 @@
   .title {
     @apply text-blue-500
   }
+
+  .title-details {
+    @apply text-blue-500
+  }
+
 }
 
 * {

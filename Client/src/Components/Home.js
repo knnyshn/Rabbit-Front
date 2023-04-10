@@ -1,6 +1,5 @@
 import React from 'react'
 import Posts from './Posts'
-import Footer from './Footering'
 import Header from './Header'
 import Footering from './Footering'
 

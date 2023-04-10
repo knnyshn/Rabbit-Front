@@ -51,7 +51,7 @@ function Posts() {
           </Link>
             <div className='post-details'>
               <p class='tagline'>
-                submitted by {post.user} in {post.burrow}.
+                submitted by {post.user.username} in {post.burrow.name}.
               </p>
             </div>
             <ul className='post-buttons'>
