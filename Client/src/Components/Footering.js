@@ -1,13 +1,15 @@
 import React from 'react'
+import Footer from './Navbar/Footer'
 
 // Footer ideally with relevant data (whatever you choose).
 
-export default function Footer() {
+export default function Footering() {
     return (
         <div className='footer'>
             <h1>
-            THIS IS A PLACEHOLDER FOR WILLS FOOTER
+          <Footer />
             </h1>
         </div>
     )
 }
+

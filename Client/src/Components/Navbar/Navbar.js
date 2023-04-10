@@ -7,8 +7,9 @@ function NavBar() {
       <div className="logo">
         <img src="/Rabbit.jpeg" alt="logo" />
       </div>
-      <div className='text-logo'>
-        <img src="/Assets/RABBIT.jpg" alt="" />
+      <div className="search-bar">
+        <input type="text" placeholder="Search" />
+        <button type="submit">Search</button>
       </div>
       <ul className="nav-links">
         <li><a href="Home">Home</a></li>
