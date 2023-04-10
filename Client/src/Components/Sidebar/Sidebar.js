@@ -1,4 +1,4 @@
-// import { Link } from 'react-router-dom';
+import './Sidebar.css'
 import '../Styles/global.css';
 import React, { useState, useEffect } from 'react';
 

@@ -1,0 +1,37 @@
+.sidebar {
+  width: 300px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #FFBC00;
+  z-index: 999;
+}
+
+.sidebar-menu {
+  padding: 20px;
+}
+
+.sidebar-burrows {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar-burrows li {
+  margin-bottom: 10px;
+}
+
+.sidebar-burrows li a {
+  display: block;
+  padding: 10px;
+  color: #FFFFFF;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.sidebar-burrows li a:hover {
+  background-color: #FFFFFF;
+  color: #FFBC00;
+  border-radius: 20px;
+}

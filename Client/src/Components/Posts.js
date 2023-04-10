@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Sidebar from './Sidebar';
+import Sidebar from './Sidebar/Sidebar';
 import { Link } from 'react-router-dom';
 // import Thumbnail from './Thumbnail';
 // import VoteButton from './VoteButton';
