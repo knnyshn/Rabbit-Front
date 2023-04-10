@@ -1,6 +1,7 @@
-// import React, { useState, useEffect } from 'react';
-// import axios from 'axios';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import Sidebar from './Sidebar';
+import { Link } from 'react-router-dom';
 // import Thumbnail from './Thumbnail';
 // import VoteButton from './VoteButton';
 
@@ -8,50 +9,62 @@ import Sidebar from './Sidebar';
 
 function Posts() {
 
-  let postsdummy = Array(10).fill();
-  console.log(postsdummy)
-  // const [posts, setPosts] = useState([]);
-
+  const [posts, setPosts] = useState([]);
+  // let postsdummy = Array(10).fill();
   // useEffect(() => {
-  //   const fetchPosts = async () => {
-  //     const response = await axios.get('/api/posts/', {
-  //       headers: {
-  //         Authorization: `JWT ${localStorage.getItem('token')}`
-  //       }
+  //   fetch('https://rabbit-app-back.herokuapp.com/burrows/?format=json')
+  //     .then(response => response.json())
+  //     .then(data => {
+  //       console.log(data.)
+  //       // setPosts(Object.values(data))
   //     });
-  //     setPosts(response.data.posts);
-  //   }
-  //   fetchPosts();
   // }, []);
+  
+
+  useEffect(() => {
+    const fetchPosts = async () => {
+      const response = await axios.get('https://rabbit-app-back.herokuapp.com/posts/?format=json', {
+        headers: {
+          Accept: "application/json"
+          // Authorization: `JWT ${localStorage.getItem('token')}`
+        }
+      });
+      console.log(response);
+      setPosts(response.data);
+    }
+    fetchPosts();
+  }, []);
 
   return (
     <div className='beeg-container'>
-    <div className='posts-container'>
-      {postsdummy.map(() => {
-        return (
+      <div className='posts-container'>
+        {posts.map((post) => (
           <div className=''>
-          {/* UP/DOWNVOTE */}
-          {/* THUMBNAIL */}
+          {/* UP/DOWNVOTE
+          THUMBNAIL */}
           <div className='post'>
             <p className='single-post'/>
-
+          <Link to={`/post/${post.id}`}>
             <div className='title'>
-              <p>TITLE</p>
+              <p>{post.title}</p>
             </div>
+          </Link>
             <div className='post-details'>
               <p class='tagline'>
-                submitted x hours ago by user in burrow y.
+                submitted by {post.user} in {post.burrow}.
               </p>
             </div>
             <ul className='post-buttons'>
-              <button className='comments'># of Comments</button>
+              <button className='comments'>{post.comments.length} Comments</button>
               <button className='share'>Share</button>
               <button className='save'>Save</button>
             </ul>
           </div>
           </div>
-        )
-      })}
+        ))}
+      </div>
+    <div className='posts-container'>
+      
       </div>
       <Sidebar />
     </div>

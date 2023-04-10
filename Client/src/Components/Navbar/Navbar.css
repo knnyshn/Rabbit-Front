@@ -14,11 +14,13 @@
   height: 50px;
   width: 50px;
   padding: 10px;
+  
 }
 
 .logo img {
   height: 100%;
   width: 100%;
+  border-radius: 50%;
 }
 
 .search-bar {

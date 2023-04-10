@@ -10,7 +10,7 @@ function VoteButton({ postId }) {
       type: type,
     }, {
       headers: {
-        Authorization: `JWT ${localStorage.getItem('token')}`
+        // Authorization: `JWT ${localStorage.getItem('token')}`
       }
     });
     setVoteCount(response.data.vote_count);
