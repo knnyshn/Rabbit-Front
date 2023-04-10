@@ -1,7 +1,8 @@
 import React from 'react'
 import Posts from './Posts'
-import Footer from './Footer'
+import Footer from './Footering'
 import Header from './Header'
+import Footering from './Footering'
 
 // Every component will be piped through here to be the home page.
 // Each component will be in its own respective container.
@@ -22,7 +23,7 @@ function Home() {
           </div>
           <div className='footer-container'>
             <div className='footer-x-component'>
-              <Footer />
+              <Footering />
             </div>
           </div>
       </div>
