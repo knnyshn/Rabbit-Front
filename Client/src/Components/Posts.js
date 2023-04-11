@@ -10,16 +10,6 @@ import { Link } from 'react-router-dom';
 function Posts() {
 
   const [posts, setPosts] = useState([]);
-  // let postsdummy = Array(10).fill();
-  // useEffect(() => {
-  //   fetch('https://rabbit-app-back.herokuapp.com/burrows/?format=json')
-  //     .then(response => response.json())
-  //     .then(data => {
-  //       console.log(data.)
-  //       // setPosts(Object.values(data))
-  //     });
-  // }, []);
-  
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -44,7 +34,7 @@ function Posts() {
           THUMBNAIL */}
           <div className='post'>
             <p className='single-post'/>
-          <Link to={`/post/${post.id}`}>
+          <Link to={`/burrow/${post.burrow.name}/${post.id}/`}>
             <div className='title'>
               <p>{post.title}</p>
             </div>

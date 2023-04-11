@@ -1,33 +1,31 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-function VoteButton({ postId }) {
-  const [voteCount, setVoteCount] = useState(0);
-  const [voteType, setVoteType] = useState(null);
+function VoteButton(props) {
+  const [vote, setVote] = useState(props.vote);
 
-  const handleVote = async (type) => {
-    const response = await axios.post(`/api/posts/${postId}/vote/`, {
-      type: type,
-    }, {
+  const handleVote = async (action) => {
+    const response = await axios.post(`https://rabbit-app-back.herokuapp.com/posts/${props.postId}/${action}/`, {}, {
       headers: {
-        // Authorization: `JWT ${localStorage.getItem('token')}`
+        Accept: "application/json",
+        Authorization: `JWT ${localStorage.getItem('token')}`
       }
     });
-    setVoteCount(response.data.vote_count);
-    setVoteType(response.data.vote_type);
-  };
+    setVote(response.data.vote);
+  }
 
   return (
-    <div>
-      <button disabled={voteType === 'up'} onClick={() => handleVote('up')}>
-        Upvote
+    <div className='vote-button'>
+      <button className='upvote' onClick={() => handleVote('upvote')}>
+        <i className='fas fa-chevron-up'></i>
       </button>
-      <span>{voteCount}</span>
-      <button disabled={voteType === 'down'} onClick={() => handleVote('down')}>
-        Downvote
+      <span className='vote-count'>{vote}</span>
+      <button className='downvote' onClick={() => handleVote('downvote')}>
+        <i className='fas fa-chevron-down'></i>
       </button>
     </div>
   );
 }
 
 export default VoteButton;
+
