@@ -46,7 +46,7 @@ function Posts() {
       <div className='posts-container'>
         {posts.map((post) => (
           <div key={post.id} className=''>
-              <div className='post px-2'>
+            <div className='post px-2'>
               <p className='single-post' />
               <Link to={`/post/${post.id}`}>
                 <div className='title'>
@@ -62,17 +62,17 @@ function Posts() {
                 <button className='comments'>{post.comments.length} Comments</button>
                 <button className='share'>Share</button>
                 <button className='save'>Save</button>
-                </ul>
-                <div className='mt-4'>
+              </ul>
+              <div className='mt-4'>
                 <LikeDislikeButton />
               </div>
-          </div>
+            </div>
           </div>
         ))}
       </div>
-      <div className='posts-container'>
 
-      </div>
+
+
       <Sidebar />
     </div>
   );

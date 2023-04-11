@@ -17,6 +17,9 @@ export default function Signup() {
     e.preventDefault()
     const response = await signUp(text.toLowerCase(), password)
     console.log(response);
+    if (response.status === 200) {
+      window.location.assign('/')
+    }
   }
 
   return (

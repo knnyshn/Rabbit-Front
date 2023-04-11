@@ -22,7 +22,7 @@ function NavBar() {
         <li><a href="About">About</a></li>
         <li><a href="/auth/Login/">Login</a></li>
       </ul>
-      <DarkMode />
+      {/* <DarkMode /> */}
     </div>
   );
 }
