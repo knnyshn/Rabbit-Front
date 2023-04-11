@@ -24,7 +24,7 @@
   }
 
   .post-details-container {
-    @apply border-2 border-gray-300 shadow-sm shadow-gray-300 rounded 
+    @apply border-2 border-gray-300 shadow-sm shadow-gray-300 rounded px-4 py-6 w-full
   }
 
   .post {
@@ -49,6 +49,18 @@
 
   .title-details {
     @apply text-blue-500
+  }
+
+  .big-comment-container {
+    @apply border-2 border-gray-300 shadow-sm shadow-gray-300 rounded
+  }
+
+  .comment-user {
+    @apply text-blue-500 px-10 py-1 mt-2
+  }
+
+  .comment-container {
+    @apply px-10
   }
 
 }
