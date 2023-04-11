@@ -1,11 +1,17 @@
 .sidebar {
-  width: 300px;
-  height: calc(100vh - 120px); /* subtract the height of your header and footer */
   position: fixed;
-  top: 60px; /* set the top value to the height of your header */
+  top: 0;
+  right: -200px;
+  width: 200px;
+  height: 100%;
+  background-color: #F66E44;
+  z-index: 1;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidebar.active {
   right: 0;
-  background-color: var(--accent);
-  z-index: 999;
 }
 
 @media screen and (max-width: 768px) {
@@ -16,6 +22,7 @@
     right: -100%;
     transition: all 0.3s ease;
   }
+
   .sidebar.active {
     right: 0;
   }
@@ -38,13 +45,24 @@
 .sidebar-burrows li a {
   display: block;
   padding: 10px;
-  color: #FFFFFF;
+  color: #000000;
   font-weight: bold;
   text-decoration: none;
 }
 
 .sidebar-burrows li a:hover {
   background-color: #FFFFFF;
-  color: var(--accent);
+  color: #F66E44;
   border-radius: 20px;
+}
+
+.sidebar-active-button {
+  margin-right: 200px;
+  transition: margin-right 0.5s;
+}
+
+@media screen and (max-width: 768px) {
+  .sidebar-active-button {
+    margin-right: 0;
+  }
 }

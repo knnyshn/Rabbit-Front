@@ -1,9 +1,13 @@
 .footer {
   display: flex;
   justify-content: space-between;
-  padding: 20px;
+  padding: 10px;
   background-color: var(--accent);
   color: #FFFFFF;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
 }
 
 .footer__section {

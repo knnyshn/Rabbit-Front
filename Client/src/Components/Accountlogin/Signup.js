@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { signUp } from '../api/user';
+import { signUp } from '../../api/user';
 import React from 'react';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
@@ -7,6 +7,7 @@ import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import './Signup.css'
 
 export default function Signup() {
   const [text, setText] = useState('')
