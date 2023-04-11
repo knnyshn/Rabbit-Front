@@ -44,7 +44,7 @@ function Posts() {
           THUMBNAIL */}
           <div className='post'>
             <p className='single-post'/>
-          <Link to={`/post/${post.id}`}>
+          <Link to={`/burrow/${post.burrow.name}/${post.id}/`}>
             <div className='title'>
               <p>{post.title}</p>
             </div>
