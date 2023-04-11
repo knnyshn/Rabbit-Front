@@ -2,8 +2,8 @@ import { Routes, Route } from 'react-router-dom';
 import React from 'react';
 import Home from './Components/Home';
 import PostDetails from './Components/PostDetails';
-import Login from './Components/Login';
-import Signup from './Components/Signup';
+import Login from './Components/Accountlogin/Login';
+import Signup from './Components/Accountlogin/Signup';
 
 function App() {
 

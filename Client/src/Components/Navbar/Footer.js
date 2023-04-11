@@ -3,7 +3,7 @@ import './Footer.css';
 
 function Footer() {
   return (
-    <div className="footer">
+    <div id="footer" className="footer">
       <div className="footer__section">
         <h3>About Us</h3>
         <p>We spend 24/7 browsing Rabbit all day, Its the best!</p>
