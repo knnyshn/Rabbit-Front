@@ -54,5 +54,3 @@ export default function Login() {
     </div>
   )
 }
-
-export default Login

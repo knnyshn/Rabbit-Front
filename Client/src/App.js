@@ -3,6 +3,8 @@ import React, { createContext, useEffect, useState } from 'react';
 import Home from './Components/Home';
 import PostDetails from './Components/PostDetails';
 import CreatePost from './Components/CreatePost';
+import Signup from './Components/Accountlogin/Signup';
+import Login from './Components/Login';
 
 export const AuthenticationContext = createContext()
 
@@ -23,7 +25,7 @@ function App() {
           <Route path='/auth/login' element={<Login />} />
           <Route path='/auth/signup' element={<Signup />} />
           <Route path="/CreatePost" element={<CreatePost />} />
-          <Route path="/burrow/:burrow/:postId/" element={<PostDetails />} />
+          <Route path="/post/:postId/" element={<PostDetails />} />
         </Routes>
       </AuthenticationContext.Provider >
     </>
