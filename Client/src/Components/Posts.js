@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Sidebar from './Sidebar/Sidebar';
+import LikeDislikeButton from './LikenDislike/Vote';
 import { Link } from 'react-router-dom';
 // import Thumbnail from './Thumbnail';
 // import VoteButton from './VoteButton';
@@ -40,8 +41,6 @@ function Posts() {
       <div className='posts-container'>
         {posts.map((post) => (
           <div className=''>
-          {/* UP/DOWNVOTE
-          THUMBNAIL */}
           <div className='post'>
             <p className='single-post'/>
           <Link to={`/post/${post.id}`}>
@@ -58,13 +57,13 @@ function Posts() {
               <button className='comments'>{post.comments.length} Comments</button>
               <button className='share'>Share</button>
               <button className='save'>Save</button>
-            </ul>
+              </ul>
+              <div className='mt-4'>
+                <LikeDislikeButton />
+              </div>
           </div>
           </div>
         ))}
-      </div>
-    <div className='posts-container'>
-      
       </div>
       <Sidebar />
     </div>

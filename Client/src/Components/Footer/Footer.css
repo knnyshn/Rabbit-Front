@@ -4,10 +4,19 @@
   padding: 10px;
   background-color: var(--accent);
   color: #FFFFFF;
-  position: fixed;
+  border-radius: 0.25rem;
+  border-width: 2px;
+  border-color: rgb(255, 255, 255, 0.5);
+  border-style: solid; /* added border style */
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05), 0 1px 2px 0 #d1d5db;
+  /* position: fixed;
   bottom: 0;
-  left: 0;
+  left: 0; */
   width: 100%;
+}
+
+.footer a {
+  font-size: 14px;
 }
 
 .footer__section {
@@ -32,18 +41,7 @@
   padding: 0;
 }
 
-.footer__section li {
-  margin-bottom: 10px;
-}
-
 .footer__section a {
   color: #FFFFFF;
   text-decoration: none;
-}
-
-.footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
 }
