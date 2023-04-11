@@ -17,6 +17,7 @@ function NavBar() {
         <button type="submit">Search</button>
       </div>
       <ul className="nav-links">
+        <li><a href="CreatePost">Create Post</a></li>
         <li><a href="Home">Home</a></li>
         <li><a href="About">About</a></li>
         <li><a href="https://rabbit-front-git-dev-knnyshn.vercel.app/login">Login</a></li>

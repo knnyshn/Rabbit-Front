@@ -56,11 +56,11 @@ function PostDetails() {
               </div>
             </div>
             <div>
-                          {post.comments.map((item) => (
-                  <>
-                  <p className="comment-user">{post.user}:</p>
-                  <p className="comment-container">{item.content}</p>
-                  </>
+              {post.comments.map((item) => (
+                <div className="big-comment-container">
+                  <h2 className="comment-user">{post.user}:</h2>
+                  <h3 className="comment-container">{item.content}</h3>
+                </div>
               ))}
             </div>
           </div>

@@ -56,11 +56,11 @@
   }
 
   .comment-user {
-    @apply text-blue-500 px-10 py-1 mt-2
+    @apply text-blue-500 px-10 py-1
   }
 
   .comment-container {
-    @apply px-10
+    @apply px-10 py-1 mb-3
   }
 
 }

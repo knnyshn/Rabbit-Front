@@ -1,38 +1,54 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import React, { useState } from "react";
+import Header from "./Header";
 
-// This is the component to create a post after logging in etc.
+function CreatePost({ onSubmit }) {
+  const [title, setTitle] = useState("");
+  const [content, setContent] = useState("");
+  const [burrow, setBurrow] = useState("");
 
-function CreatePost() {
-  const [title, setTitle] = useState('');
-  const [body, setBody] = useState('');
-
-  const handleSubmit = async (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
-    
-    try {
-      const token = localStorage.getItem('token'); // get the user's JWT token from local storage
-      const response = await axios.post('/api/posts', { title, body }, { headers: { Authorization: `Bearer ${token}` } });
-      console.log(response.data); // handle successful form submission
-    } catch (error) {
-      console.error(error); // handle form submission error
-    }
-  }
+    const post = { title, content, burrow };
+    onSubmit(post);
+    setTitle("");
+    setContent("");
+  };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        Title:
-        <input type="text" value={title} onChange={(event) => setTitle(event.target.value)} />
-      </label>
-      <br />
-      <label>
-        Body:
-        <textarea value={body} onChange={(event) => setBody(event.target.value)} />
-      </label>
-      <br />
-      <button type="submit">Submit</button>
-    </form>
+    <div>
+      <Header />
+      <div>
+        <form onSubmit={handleSubmit}>
+          <label>
+            Title:
+            <input
+              type="text"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+            />
+          </label>
+          <br />
+          <label>
+            Content:
+            <textarea
+              value={content}
+              onChange={(e) => setContent(e.target.value)}
+            />
+          </label>
+          <br />
+          <label>
+            Burrow:
+            <input
+              type="burrow"
+              value={burrow}
+              onChange={(e) => setBurrow(e.target.value)}
+            />
+          </label>
+          <br />
+          <button type="submit">Create Post</button>
+        </form>
+      </div>
+    </div>
   );
 }
 

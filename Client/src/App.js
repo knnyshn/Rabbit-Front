@@ -2,8 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 import React from 'react';
 import Home from './Components/Home';
 import PostDetails from './Components/PostDetails';
-import Login from './Components/Accountlogin/Login';
-import Signup from './Components/Accountlogin/Signup';
+import CreatePost from './Components/CreatePost';
 
 function App() {
 
@@ -11,9 +10,8 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/post/:postId" element={<PostDetails />} />
-        <Route path='/auth/login' element={<Login />} />
-        <Route path='/auth/signup' element={<Signup />} />
+        <Route path="/burrow/:burrow/:postId/" element={<PostDetails />} />
+        <Route path="/CreatePost" element={<CreatePost />} />
       </Routes>
     </>
   );
