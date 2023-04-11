@@ -1,11 +1,24 @@
 .sidebar {
   width: 300px;
-  height: 100vh;
+  height: calc(100vh - 120px); /* subtract the height of your header and footer */
   position: fixed;
-  top: 0;
-  left: 0;
-  background-color: #FFBC00;
+  top: 60px; /* set the top value to the height of your header */
+  right: 0;
+  background-color: var(--accent);
   z-index: 999;
+}
+
+@media screen and (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    top: 0;
+    right: -100%;
+    transition: all 0.3s ease;
+  }
+  .sidebar.active {
+    right: 0;
+  }
 }
 
 .sidebar-menu {
@@ -32,6 +45,6 @@
 
 .sidebar-burrows li a:hover {
   background-color: #FFFFFF;
-  color: #FFBC00;
+  color: var(--accent);
   border-radius: 20px;
 }

@@ -1,10 +1,11 @@
 import React from 'react';
 import './Navbar.css';
 import { Link } from 'react-router-dom';
+import DarkMode from './Darkmode';
 
 function NavBar() {
   return (
-    <div className="nav-container">
+    <div id="navbar"className="nav-container">
       <div className="logo">
       <Link to={`/`}>
       <img src="/Rabbit.jpeg" alt="logo" />
@@ -19,6 +20,7 @@ function NavBar() {
         <li><a href="About">About</a></li>
         <li><a href="Login">Login</a></li>
       </ul>
+      <DarkMode />
     </div>
   );
 }

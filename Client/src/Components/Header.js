@@ -6,7 +6,7 @@ import NavBar from './Navbar/Navbar'
 export default function Header() {
     return (
         <div className='header'>
-            <NavBar />
+        <NavBar />
         </div> 
     )
 }

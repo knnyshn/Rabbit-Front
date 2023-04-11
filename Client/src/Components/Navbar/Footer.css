@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   padding: 20px;
-  background-color: #FFA500;
+  background-color: var(--accent);
   color: #FFFFFF;
 }
 
@@ -37,3 +37,9 @@
   text-decoration: none;
 }
 
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}

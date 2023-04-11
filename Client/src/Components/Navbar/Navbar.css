@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 10px 20px;
-  background-color: #FFBC00;
+  background-color: var(--accent);
   border-radius: 0.25rem;
   border-width: 2px;
   border-color: rgb(255, 255, 255, 0.5);
@@ -45,7 +45,7 @@
   height: 40px;
   width: 100px;
   background-color: #FFFFFF;
-  color: #FFBC00;
+  color: var(--accent);
   border: none;
   border-radius: 20px;
   margin-left: 10px;
@@ -54,7 +54,7 @@
 }
 
 .search-bar button:hover {
-  background-color: #FFBC00;
+  background-color: var(--accent);
   color: #FFFFFF;
 }
 .nav-links {
@@ -77,4 +77,13 @@
   text-decoration: none;
   font-size: 16px;
   padding: 10px;
+}
+
+
+body  {
+  background: white;
+}
+
+.dark body {
+  background: black;
 }

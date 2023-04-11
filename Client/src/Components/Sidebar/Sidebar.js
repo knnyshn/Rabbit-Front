@@ -1,5 +1,5 @@
 import './Sidebar.css'
-import '../Styles/global.css';
+import '../../Styles/global.css';
 import React, { useState, useEffect } from 'react';
 
 export default function Sidebar() {
@@ -23,7 +23,7 @@ export default function Sidebar() {
 
   return (
     <div>
-      <div className="sidebar">
+      <div id="sidebar" className="sidebar">
         <div className='sidebar-menu'>
           {/* <ul className='sidebar-link'>
             {menus.map(menu => (
