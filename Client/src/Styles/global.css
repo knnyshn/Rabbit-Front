@@ -28,7 +28,7 @@
   }
 
   .post {
-    @apply border-2 border-gray-300 shadow-sm shadow-gray-300 rounded 
+    @apply border-2 border-gray-300 shadow-sm shadow-gray-300 p-4 rounded 
   }
 
   .post-buttons {

@@ -9,9 +9,9 @@ const DarkMode = () => {
       document.body.style.color = '#333333';
       document.querySelector('button').style.backgroundColor = '#333333';
       document.querySelector('button').style.color = 'gray';
-      document.getElementById('sidebar').style.backgroundColor = "red";
-      document.getElementById('navbar').style.backgroundColor = "red";
-      document.getElementById('footer').style.backgroundColor = "red";
+      document.getElementById('sidebar').style.backgroundColor = "#5A5A5A";
+      document.getElementById('navbar').style.backgroundColor = "#5A5A5A";
+      document.getElementById('footer').style.backgroundColor = "#5A5A5A";
     } else {
       document.body.style.backgroundColor = '';
       document.body.style.color = '';
