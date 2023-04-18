@@ -1,22 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import axios from "axios";
 import Header from "./Header";
+import api from "../api/apiConfig"
 
 function PostDetails() {
   const { postId } = useParams();
   const [post, setPost] = useState();
   useEffect(() => {
     const fetchPost = async () => {
-      const response = await axios.get(
-        `https://rabbit-app-back.herokuapp.com/posts/${postId}/?format=json`,
-        {
-          headers: {
-            Accept: "application/json",
-            // Authorization: `JWT ${localStorage.getItem('token')}`
-          },
-        }
-      );
+      const response = await api.get(`/posts/${postId}/?format=json`);
       console.log(response);
       setPost(response.data);
     };
@@ -51,14 +43,14 @@ function PostDetails() {
                 <h1 className="title-details">{post.title}</h1>
                 <p className="body-details">{post.content}</p>
                 <p class="tagline">
-                  submitted by {post.user} in {post.burrow}
+                  submitted by {post.user.username} in {post.burrow.name}
                 </p>
               </div>
             </div>
             <div>
               {post.comments.map((item) => (
                 <div className="big-comment-container">
-                  <h2 className="comment-user">{post.user}:</h2>
+                  <h2 className="comment-user">{post.user.username}:</h2>
                   <h3 className="comment-container">{item.content}</h3>
                 </div>
               ))}

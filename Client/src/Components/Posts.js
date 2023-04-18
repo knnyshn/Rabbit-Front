@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
-import axios from 'axios';
+import api from '../api/apiConfig'
 import Sidebar from './Sidebar/Sidebar';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthenticationContext } from '../App';
@@ -11,27 +11,14 @@ import { AuthenticationContext } from '../App';
 function Posts() {
 
   const [posts, setPosts] = useState([]);
-  // let postsdummy = Array(10).fill();
-  // useEffect(() => {
-  //   fetch('https://rabbit-app-back.herokuapp.com/burrows/?format=json')
-  //     .then(response => response.json())
-  //     .then(data => {
-  //       console.log(data.)
-  //       // setPosts(Object.values(data))
-  //     });
-  // }, []);
+ 
 
   let { user, setUser } = useContext(AuthenticationContext)
 
   const navigate = useNavigate()
   useEffect(() => {
     const fetchPosts = async () => {
-      const response = await axios.get('https://rabbit-app-back.herokuapp.com/posts/?format=json', {
-        headers: {
-          Accept: "application/json"
-          // Authorization: `JWT ${localStorage.getItem('token')}`
-        }
-      });
+      const response = await api.get('/posts/?format=json');
       //console.log(response);
       setPosts(response.data);
     }
@@ -56,7 +43,7 @@ function Posts() {
               </Link>
               <div className='post-details'>
                 <p className='tagline'>
-                  submitted by {post.user} in {post.burrow}
+                  submitted by {post.user.username} in {post.burrow.name}
                 </p>
               </div>
               <ul className='post-buttons'>

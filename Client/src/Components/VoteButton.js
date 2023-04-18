@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import api from '../api/apiConfig'
 
 function VoteButton(props) {
   const [vote, setVote] = useState(props.vote);
 
   const handleVote = async (action) => {
-    const response = await axios.post(`https://rabbit-app-back.herokuapp.com/posts/${props.postId}/${action}/`, {}, {
+    const response = await api.post(`/posts/${props.postId}/${action}/`, {}, {
       headers: {
         Accept: "application/json",
         Authorization: `JWT ${localStorage.getItem('token')}`
