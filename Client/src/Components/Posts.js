@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import api from '../api/apiConfig'
 import Sidebar from './Sidebar/Sidebar';
 import { Link, useNavigate } from 'react-router-dom';
-import { AuthenticationContext } from '../App';
+// import { AuthenticationContext } from '../App';
 // import Thumbnail from './Thumbnail';
 // import VoteButton from './VoteButton';
 
@@ -13,7 +13,7 @@ function Posts() {
   const [posts, setPosts] = useState([]);
  
 
-  let { user, setUser } = useContext(AuthenticationContext)
+  // let { user, setUser } = useContext(AuthenticationContext)
 
   const navigate = useNavigate()
   useEffect(() => {
@@ -24,9 +24,9 @@ function Posts() {
     }
     fetchPosts();
   }, []);
-  if (!user) {
-    navigate('/auth/login/')
-  }
+  // if (!user) {
+  //   navigate('/auth/login/')
+  // }
   return (
     <div className='beeg-container'>
       <div className='posts-container'>
